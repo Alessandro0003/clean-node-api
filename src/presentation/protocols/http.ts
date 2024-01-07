@@ -4,5 +4,6 @@ export interface HttpResponse {
 }
 
 export interface HttpRequest {
+  statusCode(statusCode: any): unknown
   body?: any
 }
