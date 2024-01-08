@@ -5,9 +5,7 @@ export const adaptRoute = (controller: Controller) => {
   return async (req: Request, res: Response) => {
     const httpRequest: HttpRequest = {
       body: req.body,
-      statusCode: function (statusCode: 200): unknown {
-        throw new Error('Function not implemented.')
-      }
+      statusCode: null
     }
 
     const httpResponse = await controller.handle(httpRequest)
