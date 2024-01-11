@@ -29,7 +29,7 @@ describe('Login Controller', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
-        email: 'any_email'
+        email: 'any_email@mail.com'
       }
     }
     const httpResponse = await sut.handle(httpRequest)
