@@ -7,18 +7,23 @@ services:
     volumes:
       - ./data:/data/db
     ports:
-      - 27017:27017
+      - "27017:27017"
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: myuser
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
+      MONGO_INITDB_DATABASE: mydatabase
+
   api:
     container_name: api-container
     build: .
     image: clean-node-api
     restart: always
     command: npm start
-    environment:
-      - MONGO_URL=STRING_DB_CONNECT
     volumes:
       - ./dist:/usr/src/clean-node-api/dist
     ports:
-      - 3000:3000
+      - "3000:3000"
+    environment:
+      - STRING_DB_CONNECT=mongodb://myuser:mypassword@meu-container-mongodb:27017/mydatabase
     links: 
       - mongo
