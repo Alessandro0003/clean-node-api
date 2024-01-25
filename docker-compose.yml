@@ -20,11 +20,11 @@ services:
     restart: always
     command: bash -c "npm install --only=prod && npm run start"
     volumes:
-      - ./dist:/usr/src/clean-node-api/dist
+      - ./dist/:/usr/src/clean-node-api/dist/
       - ./package.json:/usr/src/clean-node-api/package.json
     ports:
       - "3000:3000"
     environment:
-      - STRING_DB_CONNECT=mongodb://myuser:mypassword@meu-container-mongodb:27017/mydatabase
+      - STRING_DB_CONNECT=mongodb+srv://alessandroquintas3:alessandro07@clean-node-api.4xmsq0p.mongodb.net/?retryWrites=true&w=majority
     links: 
       - mongo
