@@ -25,6 +25,6 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - STRING_DB_CONNECT=mongodb+srv://alessandroquintas3:alessandro07@clean-node-api.4xmsq0p.mongodb.net/?retryWrites=true&w=majority
+      - STRING_DB_CONNECT=mongodb://myuser:mypassword@meu-container-mongodb:27017/mydatabase
     links: 
       - mongo
